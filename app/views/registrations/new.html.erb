@@ -1,0 +1,9 @@
+Registration
+
+<%= form_with model: @user, url: registrations_path do |form| %>
+<%= form.label "Email" %>
+  <%= form.text_field :email %>
+  <%= form.label "Password" %>
+  <%= form.password_field :password %>
+  <%= form.submit %>
+<% end %>
