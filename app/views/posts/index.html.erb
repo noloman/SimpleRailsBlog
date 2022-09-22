@@ -5,4 +5,7 @@
     Body: <%= post.body %><br />
     Author: <%= post.user.email %><br />
   </p>
+  <% if @user.id == post.user_id %>
+    <%= link_to "Edit post", edit_post_url(post) %>
+  <% end %>
 <% end %>
