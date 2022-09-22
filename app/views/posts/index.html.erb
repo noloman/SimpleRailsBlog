@@ -1,1 +1,8 @@
-Index
+<h2>Posts</h2>
+<% for post in @posts do %>
+  <p>
+    Title: <%= post.title %><br />
+    Body: <%= post.body %><br />
+    Author: <%= post.user.email %><br />
+  </p>
+<% end %>
