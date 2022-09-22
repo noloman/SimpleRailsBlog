@@ -6,6 +6,7 @@ class PostsController < ApplicationController
 
   def index
     @posts = Post.all
+    @user = User.find(session[:user_id])
   end
 
   def new
@@ -35,7 +36,7 @@ class PostsController < ApplicationController
 
   def create
     @post = Post.new
-    user = User.find_by(session[:user_id])
+    user = User.find(session[:user_id])
     params.require(:post).permit(:title, :body)
     post_params = params[:post]
 
