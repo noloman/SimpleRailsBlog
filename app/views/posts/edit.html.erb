@@ -1,0 +1,12 @@
+<% if @author.present? %>
+Editing post
+  <%= form_with model: @post do |f| %>
+    <%= f.label "Title" %>
+    <%= f.text_field :title %>
+    <%= f.label "Body" %>
+    <%= f.text_field :body %>
+    <%= f.submit "Update post" %>
+  <% end %>
+<% else %>
+  No permission to edit the post
+<% end %>
