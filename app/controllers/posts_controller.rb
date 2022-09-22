@@ -15,10 +15,11 @@ class PostsController < ApplicationController
     @post = Post.new
     user = User.find_by(session[:user_id])
     params.require(:post).permit(:title, :body)
+    post_params = params[:post]
 
     if user
-      @post.title = params[:post][:title]
-      @post.body = params[:post][:body]
+      @post.title = post_params[:title]
+      @post.body = post_params[:body]
       @post.user_id = user.id
       @post.save
     else
