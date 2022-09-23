@@ -8,6 +8,7 @@
     Body: <%= post.body %><br />
     Author: <%= post.user.email %><br />
   </p>
+  <%= link_to "View post", post_path(post) %>
   <% if @user.present? && @user.id == post.user_id %>
     <%= link_to "Edit post", edit_post_url(post) %>
   <% end %>
