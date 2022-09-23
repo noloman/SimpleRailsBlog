@@ -6,4 +6,5 @@ Rails.application.routes.draw do
   resources :logins, only: [:new, :create]
   resources :posts
   root 'posts#index'
+  get 'logins/logout' => 'logins#logout', :as => :logout
 end
